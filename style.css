@@ -1,0 +1,162 @@
+/* Variables globales para los colores */
+:root {
+  --color-primary: #e60023; /* Rojo principal */
+  --color-secondary: #efefef; /* Fondo gris claro */
+  --color-text: #333; /* Texto en gris oscuro */
+  --color-bg: #fff; /* Fondo blanco */
+  --color-hover: #e2e2e2; /* Color para hover */
+}
+
+/* Reset general para eliminar márgenes y padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Evitar que haya scroll horizontal */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--color-secondary); /* Fondo gris claro */
+  color: var(--color-text); /* Texto en gris oscuro */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Desactivar scroll horizontal */
+  overflow-y: auto; /* Activar scroll vertical */
+}
+
+/* Espaciado y alineación del contenido principal */
+main {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilos del header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky; /* Fijar el header al hacer scroll */
+  top: 0;
+  z-index: 100; /* Mantenerlo por encima del resto */
+  padding: 1rem;
+  background-color: var(--color-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+  height: 70px;
+}
+
+/* Estilos del logo */
+.logo img {
+  width: 100px; /* Ajustar el ancho */
+  height: 30px; /* Mantener las proporciones */
+  display: block;
+  margin-left: 10px; /* Margen para centrar mejor el logo */
+}
+
+/* Navegación dentro del header */
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+/* Estilos de cada elemento de la lista de navegación */
+nav ul li {
+  margin: 0 1rem;
+}
+
+/* Estilos para los enlaces dentro del menú */
+nav ul li a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: bold;
+}
+
+/* Color especial para el enlace activo */
+nav ul li a.active {
+  color: var(--color-primary);
+}
+
+/* Estilos de la barra de búsqueda */
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 0.5rem;
+  border: 1px solid var(--color-hover);
+  border-radius: 20px; /* Borde redondeado */
+  margin-right: 0.5rem;
+  outline: none; /* Sin borde de selección */
+}
+
+/* Botón de búsqueda transparente */
+.search-bar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer; /* Hacer que sea clicable */
+}
+
+/* Galería de imágenes */
+#gallery {
+  display: flex;
+  flex-wrap: wrap; /* Flexbox para alinear imágenes */
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem; /* Espacio entre imágenes */
+}
+
+/* Tarjetas para las imágenes */
+.card {
+  flex-basis: calc(
+    25% - 1rem
+  ); /* Tamaño de las tarjetas, adaptado al contenedor */
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.card img {
+  width: 100%; /* Ancho completo de la tarjeta */
+  height: auto;
+  display: block;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Información del usuario en la tarjeta */
+.card .user-info {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  justify-content: center;
+}
+
+.card .user-info img {
+  width: 40px; /* Tamaño de la imagen de perfil */
+  height: 40px;
+  border-radius: 50%; /* Imagen circular */
+  margin-right: 0.5rem;
+}
+
+/* Ajustes de responsividad para pantallas grandes */
+@media (max-width: 1200px) {
+  .card {
+    flex-basis: calc(33.33% - 1rem); /* Ajuste para pantallas medianas */
+  }
+}
+
+/* Ajustes de responsividad para pantallas medianas */
+@media (max-width: 768px) {
+  .card {
+    flex-basis: calc(50% - 1rem); /* Ajuste para pantallas más pequeñas */
+  }
+}
+
+/* Ajustes de responsividad para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .card {
+    flex-basis: calc(100% - 1rem); /* Solo una tarjeta en pantallas pequeñas */
+  }
+}
